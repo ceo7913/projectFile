@@ -1,0 +1,2163 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    
+    
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            /* overflow-x => x,y 좌표 기준 body 밖으로 나가면 hidden */
+        }
+        nav ul{
+            position: relative;
+            width: 100%;
+            height: 73px;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            list-style-type: none;
+            
+            
+        }
+        nav ul li{
+            display: inline-block;
+            position: relative;
+            top: 26%;
+            
+        }
+        
+        .dropdown-menu {
+            color:black;
+            padding: 5px;
+            font-size: 0.8vw;
+            font-weight: bold;
+            cursor: hand ;
+            top: 10px;
+            font-family: "돋움" condensed;
+            letter-spacing :-1px;
+            word-spacing: -2px;
+            background: transparent;
+            vertical-align: baseline;
+            
+          
+            
+            
+            
+         }
+        .dropdown-content div{
+            margin-bottom: 10px;
+            
+        }
+        .dropdown-content {
+           
+            font-size: 15px;
+            overflow: hidden;
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 2000px;
+            /* margin-right: 3000px; */
+            padding-left: 40px;
+            box-shadow :0px 8px 16px 0px rgba(0, 0, 0, 0.0);
+            z-index: 100;
+            text-decoration: none;
+            cursor: hand ;
+            
+        }
+        .last-content{
+            padding-bottom: 50px;
+        }
+     
+        
+        .dropdown-content a{
+           font-weight: 540;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown:hover .dropdown-menu {
+            
+            display: block;
+            margin-top: 0;
+            padding-left: 6px;
+            padding-right: 6px;
+            border-radius: 20%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: black;
+            color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            
+            display: block;
+        
+            /* object-fit:contain;
+            background-color: rgba(119, 119, 119, 0.5);
+             */
+        }
+        /* .dropdown:hover body {
+           background-color: rgba(119, 119, 119, 0.5);
+            color: rgba(119, 119, 119, 0.5);
+            
+            
+        } */
+        .dropdown:hover .dim{
+            position: absolute;
+            width: 100vw;
+            height: calc(100vh - 30px);
+            top: 30px;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 3;
+        }
+        
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+        
+
+        .title{
+            font-weight: bold;
+            margin-right: 30px;
+            margin-left: 50px;
+   
+        }
+        .top-bar{
+            font-family: Arial;
+            position: relative;
+            text-align: center;
+            width: 100%;
+            height: 31px;
+            background-color: rgb(104,155,234);
+            
+        }
+        .top-barText{
+            font-weight: bold;
+            color: white;
+        
+        }
+        .top-barLink{
+             font-weight: bold;
+             color: white;
+             margin-left: 9px;
+             border-bottom:0.5px solid white
+        }
+        div ul li{
+            display: inline-block;
+            
+        }
+        #text{
+            margin-top: 5px;
+            font-size: 14px;
+            font-family: "돋움" condensed;
+            font-weight: bold;
+            letter-spacing :-1px;
+            cursor: hand ;
+            
+        }
+        #icon{
+            margin-left: 5px;
+        
+        }
+        .swiper {
+        width: 100%;
+        height: 623px;
+        
+      }
+
+      .swiper-slide {
+       
+        text-align: center;
+        font-size: 18px;
+        background: red;
+        position: relative;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+      .icon2{
+          margin-left: 10px;
+          display: inline-block;
+          cursor: hand ;
+  
+          
+        }
+        .Momicon{
+        margin-left: 200px;
+      }
+    a { text-decoration: none; color: white; }
+    a:visited { text-decoration: none; }
+    a:hover { text-decoration: none; }
+    a:focus { text-decoration: none; }
+    a:hover, a:active { text-decoration: none; }
+
+    @media screen and (max-width: 640px){
+        body{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            
+
+        }
+        .top-bar{
+            text-align: center;
+            height: 31px;
+            
+        }
+        .dropdown{
+        
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+       
+    }
+
+    /* #slide_1::before{
+        content: "rdssfsdfs";
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        position: absolute;
+        background-color: black;
+        opacity: 0.5;
+    } */
+    
+    .swiper2 {
+        margin-top: 50px;
+        display: block;
+        width: 100%;
+        height: 800px;
+     
+     
+        
+       
+        
+      }
+
+      .swiper-slide2 {
+          overflow: hidden;
+          text-align: center;
+          font-size: 15px;
+          background: white;
+          height: 300px;
+          margin-top: 50px;
+          width: 300px;
+        
+          cursor: hand ;
+          
+        
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+          background-color: rgb(244, 244, 244);
+          
+          border-radius: 20px;
+
+          
+          
+      }
+  
+      
+      #swiper2-1slide{
+        position: relative;
+        width: 800px;
+        height: 650px;
+        margin-left: 70px;
+      }
+     #swiper2-1slide img{
+        width: 800px;
+        height: 650px;
+     }
+
+    .swiper-slide img {
+        
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+    .swiper-pagination-bullet { 
+        width: 100px; min-height: 30px; background:fixed; opacity: 0.5; 
+        font-size: 11px; color: black;
+       
+     }
+    .swiper-pagination-bullet-active { 
+        font-weight: bold; opacity: 1; font-size: 13px;
+     
+    } /* border-bottom:0.5px solid black; */
+    
+    .onepage{
+        font-size: 15px; position:relative;
+        text-align: left; margin-right: 860px;
+        
+       
+        
+    }
+    .onepage-one{
+        font-weight: bold;
+        font-size: 38px; 
+    }
+    .buy{
+        color: white; background-color: black;
+        padding: 11px; font-size: 12px; border-radius: 20px;
+        padding-left: 25px; padding-right: 25px;
+        letter-spacing:-2px; font-weight: 900;
+        
+    }
+    .buy2{
+        color: white; background-color: black;
+        padding: 11px; font-size: 12px; border-radius: 20px;
+        padding-left: 25px; padding-right: 25px;
+        letter-spacing:-1px; font-weight: 900;
+    }
+    .onepage-top{
+        margin-bottom: 20px;
+    }
+    .onepage-middle{
+        margin-bottom: 60px;
+    }
+    .twopage{
+        position: relative;
+        text-align: left;
+        margin-left:700px ;
+        font-size: 14px;
+
+    }
+    .twopage-top{
+       font-size: 40px; font-weight: 900; margin-bottom: 25px;
+   }
+    .buy3{
+    color: white; background-color: black;
+        padding: 11px; font-size: 12px; border-radius: 20px;
+        padding-left: 25px; padding-right: 25px;
+        letter-spacing:-1px; font-weight: 900;
+   }
+
+    .com{
+       margin-top: 5px;
+   }
+   
+    #threepage{
+    margin-left: 60px;
+    }
+    /* .box{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .small-box1{
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        margin-top: 30px;
+        display: inline;
+    }
+    .small-box2{
+        background-color: blue;
+        margin-left: 10px;
+        width: 200px;
+        height: 200px;
+        margin-top: 300px;
+        display: inline;
+    }
+    .box2{
+        display: flex;
+        flex-wrap: wrap;
+       
+    }
+    .bigBox{
+        background-color: #fff;
+        
+       
+        
+    } */
+    .two img{
+        
+        width: 300px;
+        height: 300px;
+    }
+    .twoBox1{
+        font-weight: bold; font-size: 13px;
+    }
+    .twoBox2{
+        font-size: 5px;
+    }
+   
+    .twoBox3{
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    .top-text{
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .swiper3 {
+        position: relative;
+        width: 100%;
+        height: 1000px;
+      
+        
+      }
+
+      .swiper3 .swiper-slide {
+ 
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper3 .swiper-slide img {
+        position: center;
+        display: block;
+        width: 85%;
+        height: 85%;
+        object-fit: cover;
+        margin-left: 128px;
+      }
+
+      .swiper3 .swiper-pagination-bullet {
+        
+        position:relative;
+        width: 150px;
+        height: 100px;
+        text-align: center;
+        font-size: 16px;
+        color: black;
+        opacity: 1;
+        font-weight: bold;
+        letter-spacing: -1px;
+       padding-left: 30px;
+       
+        
+        
+      }
+
+      .swiper3 .swiper-pagination-bullet-active {
+        color: black;
+        text-decoration:underline;
+        padding-bottom: 1px;
+        text-underline-position:under; 
+        ;
+        
+       
+    }
+    .swiper3-mainText{
+        margin-right: 50px;
+     
+    }
+   
+    .swiper3-main1 {
+      font-weight: bold;
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+    .swiper3-main2{
+      font-size: 17px;
+      letter-spacing :-1.5px;
+     
+      
+    }
+    .swiper3-top2{
+        margin-bottom: 30px;
+    }
+    .swiper3-text{
+      margin-top: 350px;
+      position: relative;
+    }
+    .swiper3-icon{
+        background-color: black;
+        
+        
+        font-size: 13px;
+        border-radius: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        letter-spacing :-2px;
+        font-weight: bold;
+        
+        
+
+    }
+
+    .swiper4 {
+        position: relative;
+        width: 100%;
+        height: 1000px;
+        
+      }
+
+      .swiper4 .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper4 .swiper-slide img {
+        display: block;
+        width: 85%;
+        height: 85%;
+        object-fit: cover;
+        margin-left: 128px;
+      }
+
+      .swiper4 .swiper-pagination-bullet {
+        
+        position: relative;
+        width: 150px;
+        height: 100px;
+        text-align: center;
+        font-size: 16px;
+        color: black;
+        opacity: 1;
+        font-weight: bold;
+      }
+
+      .swiper4 .swiper-pagination-bullet-active {
+        color: black;
+       
+        text-decoration:underline;
+        padding-bottom: 1px;
+        text-underline-position:under; 
+      }
+      .swiper4-main{
+        font-size: 50px;
+        font-weight: bold;
+        letter-spacing :-2px;
+        margin-bottom: 10px;
+      }
+     .swiper4-Text{
+        margin-top: 380px;
+        padding: -10px;
+        
+     }
+     .swiper4-Text2{
+        margin-right: 62px;
+        margin-top: 440px;
+        padding: -10px;
+     }
+     .swiper4-Text3{
+        margin-top: 380px;
+        margin-right: 62px;
+     }
+  
+     .swiper4-btn{
+    
+        background-color: black;
+        padding-top: 10;
+        padding-bottom: 10;
+        padding-left: 20;
+        padding-right: 20;
+        font-size: 14px;
+        border-radius: 40px;
+        letter-spacing: -2px;
+        font-weight: bold;
+       
+     }
+     .swiper4-sideTop{
+        margin-bottom: 20px;
+        letter-spacing: -2px;
+     }
+
+     .Page{
+        text-align: center;
+        margin-top: 70px;
+     }
+     .Page-name1{
+        font-weight: bold;
+     }
+     .page-name2{
+        font-weight: bold;
+        font-size: 50px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+     }
+     .container{
+        
+        width: 100%;
+        height: 100%;
+        display: flex;
+        
+        margin-left: 7%;
+        margin-right: 7%;
+      
+     }
+     .left{
+        display: flex;
+        display: block;
+       
+        
+     }
+     .left img{
+        display: flex;
+        display: block;
+        border-radius: 50px;
+        margin-left: 30px;
+        
+     }
+     .left div{
+        margin-left: 70px;
+        margin-top: 5px;
+        display: block;
+       
+     }
+     .left1{
+        font-size: 14px;
+        color: black
+     }
+     .left2{
+        font-size: 18px;
+        font-weight:bold ;
+        letter-spacing: -2px;
+        margin-bottom: 20px;
+     }
+     .left3{
+        font-size: 11px;
+        letter-spacing: -1px;
+        margin-bottom: 60px;
+        
+     }
+
+     
+    
+     .center{
+        display: flex;
+        display: block;
+
+     }
+     .center img{
+        display: flex;
+        display: block;
+        border-radius: 50px;
+        margin-left: 20px;
+     }
+     .center div{
+        margin-left: 50px;
+     }
+     .right{
+        display: flex;
+        display: block;
+     }
+     .right img{
+        display: flex;
+        display: block;
+        border-radius: 50px;
+        margin-left: 20px;
+     }
+     .right div{
+        margin-left: 50px;
+        margin-top: 5px;
+        
+     }
+     .container1{
+        overflow: hidden;
+        height: 420px;
+        width: 32%;
+        margin-top: 500px;
+        position: relative;
+        display: flex;
+        float: left;
+        border: 1px solid RGB(217, 217, 217);
+        font-size: 15px;
+        padding-top: 30px;
+        letter-spacing: -2px;
+        border-right: rgba(0, 0,0,1) ;
+       
+     }
+     .container2{
+        overflow: hidden;
+        height: 420px;
+        letter-spacing: -2px;
+        padding-top: 30px;
+        width: 16%;
+        margin-top: 500px;
+        position: relative;
+        display: flex;
+        float: left;
+        border: 1px solid RGB(217, 217, 217);
+        font-size: 15px;
+        border-right: rgba(0, 0,0,1) ;
+     }
+     .con1{
+        float: left;
+        margin-bottom: 50px;
+        
+        
+     }
+     .con2{
+        float: left;
+        margin-left: 145px;
+        margin-top: 59px;
+     }
+     .con1Name{
+        font-weight: bold !important;
+        font-size: 16px !important;
+        margin-bottom: 20px !important;
+       
+     }
+    .container1 ul div{
+        
+        margin-bottom: 13px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .container2 ul div{
+        margin-bottom: 13px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .container3{
+        overflow: hidden;
+        height: 420px;
+        letter-spacing: -2px;
+        padding-top: 30px;
+        width: 16%;
+        margin-top: 500px;
+        position: relative;
+        display: flex;
+        float: left;
+        border: 1px solid RGB(217, 217, 217);
+        font-size: 15px;
+        border-right: rgba(0, 0,0,1) ;
+     }
+     .container3 ul div{
+        margin-bottom: 13px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .container4{
+        overflow: hidden;
+        height: 420px;
+        letter-spacing: -2px;
+        padding-top: 30px;
+        width: 16%;
+        margin-top: 500px;
+        position: relative;
+        display: flex;
+        float: left;
+        border: 1px solid RGB(217, 217, 217);
+        font-size: 15px;
+        border-right: rgba(0, 0,0,1) ;
+    }
+    .container4 ul div{
+        margin-bottom: 13px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .container5{
+        overflow: hidden;
+        position: fixed;
+        height: 420px;
+        letter-spacing: -2px;
+        padding-top: 30px;
+        width: 19%;
+        margin-top: 500px;
+        position: relative;
+        display: flex;
+        float: left;
+        border: 1px solid RGB(217, 217, 217);
+        font-size: 15px; 
+        border-right: rgba(0, 0,0,1) ;
+    }
+    .container5 ul div{
+        margin-bottom: 13px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .topcon{
+        width: 100%;
+        height: 100%;
+       
+    }
+    .con2Name{
+        font-weight: bold !important;
+        font-size: 18px !important;
+        margin-bottom: 20px !important;
+        margin-top: 80px;
+    }
+    .topcon svg{
+        margin-left: 3px;
+        font-weight: bold;
+
+    }
+    .last-text{
+        display: block;
+        
+        color: rgb(102, 102, 102);
+        font-size: 12px;
+       letter-spacing: -1px;
+       margin-left: 95px;
+       margin-bottom: 10px;
+      position: absolute;
+      margin-top: 170px;
+       padding-bottom: 20px; 
+    }
+    .last-text a{
+        background-color: #777777;
+        border-radius:20px;
+        padding-left: 5px;
+        padding-right: 7px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+
+    }
+    .last-text2{
+        margin-top: 5px;
+        font-size: 13px;
+        font-weight: bold;
+       
+    }
+
+    #con1{
+        margin-left: 60px;
+    }
+    .onpage-top1{
+        font-size: 16px;
+        margin-bottom: 10px;
+        letter-spacing: -1px;
+    }
+   
+    .buy4{
+        /* position: fixed; */
+        color: white; background-color: black;
+        padding: 8px; font-size: 12px; border-radius: 20px;
+        padding-left: 20px; padding-right: 20px;
+        letter-spacing:-1px; font-weight: 900;
+    }
+    .two-page{
+        font-size: 15px; position:relative;
+        text-align: left; margin-right: 860px; 
+        color: #fff;
+        letter-spacing: -1.5px;
+        margin-bottom: 30px;
+    }
+   .twopage-top1{
+    font-weight: 200;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 5px;
+   }
+   .twopage-middle1{
+    margin-bottom: 25px;
+   }
+   .buy5{
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration:underline;
+    text-underline-position:under;
+   }
+   .buy6{
+    margin-left: 50px;
+    color: black;
+    background-color: #f1f1f1;
+    font-size: 12px;
+    letter-spacing: -2px;
+    padding: 10px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+   }
+   .three-page{
+    font-size: 15px; position:relative;
+        text-align: left; margin-right: 860px; 
+        color: black;
+        letter-spacing: -1.5px;
+        margin-bottom: 30px;
+   }
+    .threepage-one{
+        font-size: 38px;
+        font-weight: bold;
+        letter-spacing: -2px;
+
+    }
+    .threepage-top1{
+        margin-bottom: 15px;
+        font-size: 17px;
+    }
+    .threepage-middle{
+        margin-top: 20px;
+        font-size: 13px;
+    }
+    .buy7{
+
+    color: white;
+    background-color: black;
+    font-size: 12px;
+    letter-spacing: -2px;
+    padding: 10px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    
+    }
+    .threepage1{
+        margin-bottom: 50px;
+    }
+    .four-page{
+        font-size: 15px; position:relative;
+        text-align: left; margin-right: 860px; 
+        color: black;
+        letter-spacing: -1.5px;
+        margin-bottom: 30px;
+    }
+    .fourpage-one{
+        font-size: 38px;
+        font-weight: bold;
+        letter-spacing: -2px;
+    }
+    .fourpage-top1{
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+    .fourpage-middle{
+        margin-top: 20px;
+        font-size: 13px;
+        margin-bottom: 40px;
+    }
+
+    .buy8{
+        color: white;
+    background-color: black;
+    font-size: 11px;
+    letter-spacing: -2px;
+    padding: 8px;
+    border-radius: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-weight: bold;
+    
+    }
+    .five-page{
+        font-size: 15px; position:relative;
+        text-align: left; margin-right: 860px; 
+        color: white;
+        letter-spacing: -1.5px;
+        margin-bottom: 30px;
+    }
+    .fivepage-one{
+        font-size: 38px;
+        font-weight: bold;
+        letter-spacing: -2px;
+    }
+    .fivepage-top1{
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+    .fivepage-middle{
+        margin-top: 20px;
+        font-size: 14px;
+        
+    }
+    .fivepage1{
+        margin-top: 30px;
+    }
+ 
+    .banner svg{
+        color: rgba(82, 166, 193,0.9);
+        background-color: #f1f1f1;
+        position: fixed;
+        width: 55;
+        height: 55;
+        right: 1.3%;   
+	    bottom: 7.0%; 
+        opacity: 1; 
+        border-radius: 90%;
+        z-index: 1000;
+        margin-bottom: 1.5%;
+    }
+  
+    .bottom-nav{
+        margin-top: 370px;
+        border: 1px solid RGB(217, 217, 217);
+        border-bottom: rgba(0, 0,0,1) ;
+        border-left: rgba(0, 0,0,1) ;
+        border-right: rgba(0, 0,0,1) ;
+    }
+    .bottom-nav ul{
+        margin-left: 55px;
+        display: flex;
+        background-color: white;
+        list-style-type: none;
+        
+      }
+      .bottom-nav ul li {
+        display: inline-block;
+        margin-left: 40;
+        margin-top: 10px;
+        font-size: 12px;
+        letter-spacing: -1px;
+        font-weight: bold;
+        color: #777777;
+        
+      }
+      .bottom-drop{
+        position: relative;
+      }
+      .bottom-menu{
+        background-color: #f1f1f1;
+        /* text-align: center; */
+        border-radius: 20%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: 0.1px solid black;
+        position: relative;
+        
+        color: #777777;  font-size: 13px; cursor: hand;
+        /* background-color: white;
+        padding-top: 10;
+        padding-bottom: 10;
+        padding-left: 20;
+        padding-right: 20;
+        font-size: 13px;
+        border-radius: 40px;
+        letter-spacing: -2px;
+        font-weight: bold;
+        color: black; */
+        
+      }
+      .bottom-content{
+        display: none; position:absolute;background-color: #f9f9f9; min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      }
+      .bottom-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .bottom-drop:hover .bottom-content{
+        display: block;
+        
+      }
+      .bottom-content a:hover{
+        background-color: #f1f1f1
+      }
+      .bottom-menu svg{
+        margin-left: 60px;
+      }
+      .site-map{
+        margin-right: 100px;
+      }
+     
+      .side-icon svg{
+        color: white;
+        background-color: black;
+        position: fixed;
+        width: 48;
+        height: 48;
+        right: 1.4%;   
+	    bottom: 2.4%; 
+        opacity: 1; 
+        border-radius: 20%;
+        z-index: 1000;
+      }
+      .con1 div {
+        cursor: pointer;
+      }
+     #last-swiper3{
+        margin-bottom: 30px;
+     }
+     .swiper4-main2{
+        
+        font-size: 50px;
+        color: #f1f1f1;
+        letter-spacing: -1px;
+        font-weight: bold;
+     }
+    
+     .swiper4-side2{
+        margin-top: 10px;
+        color: #f1f1f1;
+        margin-bottom: 30px;
+     }
+     .swiper4-btn2{
+        font-size: 14px;
+        letter-spacing: -2px;
+        font-weight: bold;
+        padding-right: 40px;
+        text-decoration:underline;
+        text-underline-position:under;
+    
+     }
+     .swiper4-btn3{
+        background-color: white;
+        padding-top: 10;
+        padding-bottom: 10;
+        padding-left: 20;
+        padding-right: 20;
+        font-size: 13px;
+        border-radius: 40px;
+        letter-spacing: -2px;
+        font-weight: bold;
+        color: black;
+     }
+    </style>
+</head>
+<body> 
+    <!-- navbar -->
+  <div class="top-bar">
+      <ul>
+          <li>
+              <div class="top-barText" id="text" ><a href="https://www.samsung.com/sec/event/groupdeal/?anc=groupdeal">모두모두 모여라! 함께 뭉치면 최대 49% 할인!</a></div>
+        </li>
+          <li>
+              <div class="top-barLink" id="text" ><a href="https://www.samsung.com/sec/event/groupdeal/?anc=groupdeal">공동 구매하기</a></div>
+          </li>
+      </ul>
+  </div>
+    <nav>
+        <ul>
+            <li>
+                <div class="title"> <img src="/삼성.PNG" alt=""> </div>
+            </li>
+            
+            <li class="dropdown">
+                <!--  dropbtn -->
+                <div class="dropdown-menu">제품</div> 
+                    <div class="dropdown-content">
+                        <a>
+                            <!-- column -->
+                          
+                              <div class="content-content"><a href="">신제품</a>
+                                    <!-- <div><a href="https://www.samsung.com/sec/bespoke/all-bespoke/?bespoke-air-conditioners"></a></div>
+                                    <div><a href="https://www.samsung.com/sec/bespoke/all-bespoke/?bespoke-air-conditioners"></a></div>
+                                    <div><a href="https://www.samsung.com/sec/bespoke/all-bespoke/?bespoke-air-conditioners"></a></div>
+                                    <div><a href="https://www.samsung.com/sec/bespoke/all-bespoke/?bespoke-air-conditioners"></a></div>
+                                    <div><a href="https://www.samsung.com/sec/bespoke/all-bespoke/?bespoke-air-conditioners"></a></div> -->
+                              </div>
+                            <div><a href="">공동구매</a></div>
+                            <div><a href="">모바일</a></div>
+                            <div><a href="">tv&오디오</a></div>
+                            <div><a href="">BESPOKE</a></div>
+                            <div><a href="">주방가전</a></div>
+                            <div><a href="">생활가전</a></div>
+                            <div><a href="">PC/주변기기</a></div>
+                            <div><a href="">스마트홈</a></div>
+                            <div><a href="">소모품</a></div>
+                            <div class="last-content">
+
+                                <div><a href="">데이코 <img src="/데이코.jpg" alt=""></a></div>
+                            </div>
+                        </a>
+                    </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-menu">혜택/이벤트</div>
+                    <div class="dropdown-content">
+                        <a>
+                            <div><a href="">기획전 모두보기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바로가기</a></div>
+                            <div><a href="">삼성닷컴 단독</a></div>
+                            <div><a href="">공동구매</a></div>
+                            <div><a href="">갤럭시 캠퍼스 스토어</a></div>
+                            <div><a href="">중고가전 추가보상</a></div>
+                            <div><a href="">웨딩 / 신혼샵</a></div>
+                            <div><a href="">아울렛</a></div>
+                            <div><a href="">닷컴 회원 혜택</a></div>
+                            <div><a href="">이벤트존</a></div>
+                            <div><a href="">홈 피트니스</a></div>
+                            <div><a href="">삼성 닷컴 Live</a></div>
+                            <div><a href="">MD 초이스 샵</a></div>
+                            <div><a href="">갤럭시 커스텀 스튜디오</a></div>
+                        </a>
+                    </div>
+            </li>        
+            <li class="dropdown">
+                <a href="https://www.samsung.com/sec/galaxycampus/"></a><div class="dropdown-menu">갤럭시 컴프스 스토어</div></a>
+    
+                 <div class="dropdown-content">
+                    </div>
+            </li>        
+            <li class="dropdown">
+                <div class="dropdown-menu">큐커 식품관</div>
+                    <div class="dropdown-content">
+                        <a>
+                    <div><a href="">신제품</a></div>
+                            <div><a href="">공동구매</a></div>
+                            <div><a href="">모바일</a></div>
+                            <div><a href="">tv&오디오</a></div>
+                            <div><a href="">BESPOKE</a></div>
+                            <div><a href="">주방가전</a></div>
+                            <div><a href="">생활가전</a></div>
+                            <div><a href="">PC/주변기기</a></div>
+                            <div><a href="">스마트홈</a></div>
+                            <div><a href="">소모품</a></div>
+                            <div><a href="">데이코 <img src="/데이코.jpg" alt=""></a></div>
+                        </a>
+                    </div>
+            </li>        
+            <li class="dropdown">
+                <div class="dropdown-menu">#YouMake</div>
+                    <div class="dropdown-content">
+                        <a>
+            
+                        </a>
+                    </div>
+            </li>        
+            <li class="dropdown">
+                <div class="dropdown-menu">스토리</div>
+                    <div class="dropdown-content">
+                        <a href=""></a>
+                    </div>
+            </li>        
+            <li class="dropdown">
+                <div class="dropdown-menu">고객 서비스</div>
+                    <div class="dropdown-content">
+                        <a href=""></a>
+                    </div>
+            </li>        
+            <li class="dropdown">
+                <div class="dropdown-menu">멤버십</div>
+                    <div class="dropdown-content">
+                        <a href=""></a>
+                    </div>
+            </li>        
+            <li class="dropdown">
+                <div class="dropdown-menu">디지털프라자<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  </svg></div>
+                    <div class="dropdown-content">
+                        <a href=""></a>
+                    </div>
+            </li>        
+            <li class="dropdown">
+                <div class="dropdown-menu">사회공헌<svg id="icon"xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 9">
+                    <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                  </svg></div>
+                    <div class="dropdown-content">
+                        <a href=""></a>
+                    </div>
+            </li>        
+            <li class="dropdown">
+                <div class="dropdown-menu">비즈니스<svg id="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 9">
+                    <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                  </svg></div>
+                    <div class="dropdown-content">
+                        <a href=""></a>
+                    </div>
+            </li>
+            <li class="Momicon">
+                <div class="icon2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"> 
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg></div>
+                <div class="icon2"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                </svg></div>
+                <div class="icon2"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 12">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                </svg></div>
+            </li>    
+        </ul>    
+    </nav>
+    
+
+    <!--====================================================================================-->
+    <div class="swiper mySwiper">
+       
+        <div class="swiper-wrapper">
+       
+        
+        <div class="swiper-slide">
+            <img src="https://images.samsung.com/kdp/cms_contents/158111/6dcc05cb-623e-402f-98a3-be612aa4097f.jpg?$ORIGIN_JPG$" alt="">
+            <ul class="onepage">
+                <div class="onepage-top">
+                    <li class="onepage-one">모두 모두 모여라!</li></br>
+                    <li class="onepage-one">공동구매</li></br>
+                </div>
+                <div class="onepage-middle">
+                    <li>함께 뭉치면, 판매가 기준 최대 49%할인!</li></br>
+                    <li>공동구매 특가를 만나보세요</li></br>
+                </div>
+                <a class="buy" href="">공동 구매하기</a>
+            </ul>
+            <!-- <p class="onepage">모두 모두 모여라!</p>
+            <p class="onepage">공동구매</p>
+            <p>함께 뭉치면, 판매가 기준 최대 49%할인!</p>
+            <p>공동구매 특가를 만나보세요</p>
+            <a href="">공동 구매하기</a> -->
+            
+        </div>
+            <div class="swiper-slide"><img src="https://images.samsung.com/kdp/cms_contents/158066/95d905e3-19c3-4462-be42-7c24e4b951e3.jpg?$ORIGIN_JPG$" alt="">
+                <ul class="twopage">
+                    <div class="twopage-top">
+                        <li class="twopage-one">Galaxy Tab Series</li></br>
+                        <li class="twopage-one">여행엔 탭하나</li></br>
+                    </div>
+                    <div class="onepage-middle">
+                        <li>삼성닷컴 단독! 최대 98만 상당 혜택으로</li></br>
+                        <li>갤럭시 탭 시리즈를 만나보세요</li></br>
+                    </div>
+                    <a class="buy2" href="">구매 혜택보기</a>
+                </ul>
+        </div>
+          
+        <div class="swiper-slide">
+            <img src="https://images.samsung.com/kdp/cms_contents/158936/7323de75-a272-4991-9454-7cf98e10b5f4.jpg?$ORIGIN_JPG$" alt="">
+                <ul class="onepage" id="threepage">
+                    <div class="onepage-top">
+                        <li class="onepage-one">갤럭시 워치4</li></br>
+                        <li class="onepage-one">블랙야크 콜라보 패키지</li></br>
+                    </div>
+                    <div class="onepage-middle">
+                        <li>활동적인 운동파트너가 되어줄 블랙야크만의 특별한 구성!</li></br>
+                        <li>블랙야크 알파클럽(BAC)회원이라면 최대 3만원 할인쿠폰까지</li></br>
+                        <li class="com">Coming soon 2022.06.15</li></br>
+                    </div>
+                    <a class="buy3" href="">자세히 보기</a>
+                </ul>
+        </div>
+          
+        <div class="swiper-slide">
+            <img src="https://images.samsung.com/kdp/cms_contents/158272/10b585af-5423-43d3-8809-99c4e04eda62.jpg?$ORIGIN_JPG$" alt="">
+                <ul class="onepage">
+                    <div class="onepage-top">
+                        <li class="onepage-one">Global No.1 삼성tv와</li></br>
+                        <li class="onepage-one">OTT 서비스의 콜라보</li></br>
+                    </div>
+                    <div class="onepage-middle">
+                        <li>최상의 화질로 TVING을 플레이하세요</li></br>
+                        <li class="page-bottom">대상모델 구매 시 프리미엄 6개월권 제공</li>
+                       
+                    </div>
+                    <a class="buy3" href="">자세히 보기</a>
+                </ul>
+            </div>
+            
+
+      
+        <div class="swiper-slide">
+            <img src="https://images.samsung.com/kdp/cms_contents/158111/ee5038f1-002c-416e-8d0a-37acc8116576.png?$ORIGIN_JPG$" alt="">
+                <ul class="onepage">
+                    <div class="onepage-top">
+                        <li class="onpage-top1">올 여름 강력 추천템</li></br>
+                        <li class="onepage-one">무풍에어컨 최대 42% 할인</li></br>
+                    </div>
+                    <div class="onepage-middle">
+                        <li>곧 시작되는 여름철 폭염주의보</li></br>
+                        <li>삼성닷컴 아울렛 특가로 미리 준비하세요!</li>
+                    
+                    </div>
+                    <a class="buy4" href="">제품 모두 보기</a>
+                </ul>
+        </div>
+       
+        <div class="swiper-slide">
+            <img src="https://images.samsung.com/kdp/cms_contents/156255/9015d504-cc18-4cce-95f5-71ae8e71dfe6.jpg?$ORIGIN_JPG$" alt="">
+                <ul class="two-page">
+                    <div class="twopage-top">
+                        <li class="twopage-top1">5만원에 전자레인지 바꿀 수 있는 기회</li></br>
+                        <li class="twopage-one">전 국민 전자레인지</li></br>
+                        <li class="twopage-one">교체 캠페인 2탄</li></br>
+                    </div>
+                    <div class="twopage-middle">
+                        <li>지금 삼성카드 My 큐커 플랜 가입하고</li></br>
+                        <li class="twopage-middle1">hy 22만원 상당 혜택까지 만나보세요!</li>
+                    
+                    </div>
+                    <a class="buy5" href="">100원에 시작하기</a>
+                    <a class="buy6" href="">구매 혜택 보기</a>
+                </ul>
+        </div>
+         
+        <div class="swiper-slide">
+            <img src="https://images.samsung.com/kdp/cms_contents/158272/a0dc6c0c-7bba-4e8f-9e57-5b232b0653ab.jpg?$ORIGIN_JPG$" alt="">
+                <ul class="three-page">
+                    <div class="threepage-top">
+                        <li class="threepage-top1">삼성닷컴 지.구.인 프로젝트</li></br>
+                        <li class="threepage-one">중고가전 추가보상 프로그램</li></br>
+                        
+                    </div>
+                    <div class="threepage-middle">
+                        <li>신제품 ~49% 할인받아 구매하고</li></br>ㅈ
+                        <li class="threepage1">구제품 무상수거 + 최대 123만 혜택까지!</li>
+                    
+                    </div>
+                    <a class="buy7" href="">구매 혜택 보기</a>
+    
+                </ul>
+        </div>
+      
+        <div class="swiper-slide">
+            <img src="https://images.samsung.com/kdp/cms_contents/158707/df1c3499-7354-47be-8b16-c923c58ec546.jpg?$ORIGIN_JPG$" alt="">
+                <ul class="four-page">
+                    <div class="fourpage-top">
+                        <li class="fourpage-top1">삼성가전 새것처럼 관리하기!</li></br>
+                        <li class="fourpage-one">삼성케어 플러스 알림</li></br>
+                        
+                    </div>
+                    <div class="fourpage-middle">
+                        <li>이제 가전케어 쉽게 구매하고 정기적으로 구독하세요</li></br>
+                        <li>알림 신청 시 스타벅스 기프티콘 추첨 증정</li></br>
+                        <li class="fourpage1">Coming Soon 2022.06.13 (월)</li>
+                    
+                    </div>
+                    <a class="buy8" href="">알림 신청하기</a>
+
+                </ul>
+        </div>
+         
+        <div class="swiper-slide"><img src="https://images.samsung.com/kdp/cms_contents/159609/66eb4ec9-c40a-4784-b2f7-4620615efd07.jpg?$ORIGIN_JPG$" alt="">
+                <ul class="five-page">
+                    <div class="fivepage-top">
+                        <li class="fivepage-top1">Coming Soon 2022.06.13 오전 10시</li></br>
+                        <li class="fivepage-one">Galaxy Buds2</li></br>
+                        <li class="fivepage-one">포켓몬 몬스터볼 커버 패키지 오픈</li>
+                        
+                    </div>
+                    <div class="fivepage-middle">
+                        <li>버즈2 포켓몬 몬스터볼 커버 패키지</li></br>
+                        <li>2차 물량이 곧 오픈되니 기대해주세요</li></br>
+                        <li class="fivepage1">※ 포켓몬 스티커는 랜덤으로 1종만 제공합니다</li>
+                    
+                    </div>
+                    
+
+                </ul>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    </div>
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!--===============================================================================================-->
+
+            <div class="swiper2 mySwiper2">
+              
+                    <div class="swiper-pagination"></div>
+                <div class="swiper-wrapper">
+                
+                
+                <div class="swiper-slide2" id="swiper2-1slide">
+                    <div class="two">
+                    <img src="//images.samsung.com/kdp/cms_contents/159775/12f82214-603e-4138-ad0f-e0e2fca72588.png?$684_684_PNG$" alt="">
+                   
+                    </div>
+                </div>
+                <div class="swiper-slide2">
+                    <div class="two">
+                    <img src="//images.samsung.com/kdp/cms_contents/159575/190e9c63-1c6f-4d5d-abf7-bf19365894e3.png?$330_330_PNG$" alt="">
+                   
+                    </div>
+                </div>
+                <div class="swiper-slide2">
+                    <div class="two">
+                    <img src="//images.samsung.com/kdp/cms_contents/159775/772faecc-c5ec-4965-b0ed-a9bc192654fb.png?$330_330_PNG$" alt="">
+                    
+                    </div>
+                </div>
+                <div  class="swiper-slide2">
+                    <div class="two">
+                    <img src="//images.samsung.com/kdp/cms_contents/159775/afc622ab-7182-4466-8f40-23c412f73699.png?$330_330_PNG$" alt="">
+                  
+                    </div>
+                </div>
+                <div  class="swiper-slide2">
+                    <div class="two">
+                    <img src="//images.samsung.com/kdp/cms_contents/159575/70793260-478b-4536-ae69-72bef918882b.png?$330_330_PNG$" alt="">
+                    
+                    </div>
+                </div>
+                
+              
+                
+                
+                
+                </div>
+
+
+                <!-- ----------------------------------------------------------------------- -->
+                
+                    <div class="swiper3 mySwiper3">
+                        <div class="swiper3-pagination">
+                          
+                               
+                        <div class="swiper-pagination"></div>
+                          
+                        </div>
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide">
+                        
+                            
+                            <img src="https://images.samsung.com/kdp/cms_contents/151281/be3a3d59-03aa-4adf-83e1-bb9661364118.jpg" alt="">
+                                <ul class="swiper3-mainText">
+                                    <div class="swiper3-text">
+                                        <li class="swiper3-main1">Galaxy S22 SEries</li></br>
+                                    </div>
+                                    <div class="swiper3-top2">
+                                        <li class="swiper3-main2">더욱 강력해진 갤럯시를 삼성카드 결제시</li></br>
+                                        <li class="swiper3-main2">최대 29만원 상당 혜택으로 만나보세요</li></br>
+                                       
+                                    </div>
+                                    <a class="swiper3-icon" href="">구매하기</a>
+                                </ul>
+                        </div> 
+                        <div class="swiper-slide">
+                            <img src="https://images.samsung.com/kdp/cms_contents/151281/501bd049-6cb6-44a3-a6c0-70e3ca36e4eb.png" alt="">
+                                <ul class="swiper3-mainText">
+                                    <div class="swiper3-text">
+                                        <li class="swiper3-main1">Galaxy Book2 Series</li></br>
+                                    
+                                    </div>
+                                    <div>
+                                        <li class="swiper3-main2">초경량 초슬림 갤럭시 북2와 함께 즐기는 집콕 탈출!</li></br>
+                                        <li class="swiper3-main2" id="last-swiper3">삼성닷컴 최대 131만 단독 혜택으로 만나보세요</li></br>
+                                    
+                                    </div>
+                                    <a class="swiper3-icon" href="">구매 혜택 보기</a>
+                                </ul>
+                        </div> 
+                        <div class="swiper-slide">
+                            <img src="https://images.samsung.com/kdp/cms_contents/151281/54066fd1-1464-4ef5-98ab-64e2bde419ce.jpg" alt="">
+                                <ul class="swiper3-mainText">
+                                    <div class="swiper3-text">
+                                        <li class="swiper3-main1">갤럭시 캠퍼스 스토어</li></br>
+                                    </div>
+                                    <div>
+                                        <li class="swiper3-main2">대학생, 대학원생과 대학교원, 교직원을 위한</li></br>
+                                        <li class="swiper3-main2" id="last-swiper3">교육 할인 스토어를 만나보세요!</li></br>
+                                        
+                                    </div>
+                                    <a class=" swiper3-icon" href="">더 알아보기</a>
+                                </ul>
+                        </div> 
+                        <div class="swiper-slide">
+                            <img src="https://images.samsung.com/kdp/cms_contents/133195/0c0f863f-73f6-4ad1-89ff-83b30a403db6.jpg" alt="">
+                                <ul>
+                                    <div>
+                                        <li>Galaxy Studio</li></br>
+                                       
+                                    </div>
+                                    <div>
+                                        <li>갤럭시 S22의 놀랍고 새로운 기능을 마음껏 경험하세요</li></br>
+                                  
+                                    </div>
+                                    <a class="" href="">더 알아보기</a>
+                                </ul>
+                        </div> 
+                        <div class="swiper-slide">
+                            <img src="https://images.samsung.com/kdp/cms_contents/151281/0474b346-de58-4aa9-8e0a-8b9bf98e0100.png" alt="">
+                                <ul>
+                                    <div>
+                                        <li>갤럭시 콘텐츠 페스타</li></br>
+                                    </div>
+                                    <div>
+                                        <li>갤럭시 S22로 담은 소중한 순간들을 확인해 보세요</li></br>
+                                    
+                                    </div>
+                                    <a class="" href="">더 알아보기</a>
+                                </ul>
+                        </div> 
+
+                
+                </div>
+                </div>
+
+            <!-- ============================================================================================ -->
+                
+                
+            <div class="swiper4 mySwiper4">
+           
+                <div class="swiper-pagination"></div>
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <img src="https://images.samsung.com/kdp/cms_contents/151281/a0b53da7-fc69-441c-bacf-853e5ae9e681.jpg" alt="">
+                        <ul class="swiper4-Text">
+                            <div>
+                                <li>보다, 더 자유롭게.</li></br>
+                                <li class="swiper4-main">The Freestyle</li>
+                            </div>
+                            <div class="swiper4-sideTop">
+                                <li class="swiper4-side">듣고 보는 플레이어를 넘어</li></br>
+                                <li class="swiper4-side">마침내 올라운드 플레이어의 시대</li></br>
+                            </div>
+
+                            <a class="swiper4-btn" href="">제품 모두 보기</a>
+                            
+
+                        
+                        </ul>
+                </div> 
+                <div class="swiper-slide">
+                    <img src="https://images.samsung.com/kdp/cms_contents/133195/b989d65e-4e08-4f03-8766-1a8e20bc1ef3.jpg" alt="">
+                        <ul class="swiper4-Text2">
+                            <div>
+                                <li class="swiper4-main2">Neo QLED</li></br>
+                            
+                            </div>
+                            <div class="swiper4-side2">
+                                <li>Global No.1이 만든 새로운 화질의 시작</li></br>
+                             
+                            
+                            </div>
+                            <a class="swiper4-btn2" href="">더 알아보기</a>
+                            <a class="swiper4-btn3" href="">제품 모두 보기</a>
+                        </ul>
+                </div> 
+                <div class="swiper-slide">
+                    <img src="https://images.samsung.com/kdp/cms_contents/151281/9af77aa6-a302-4665-89e3-2d9b9df1d489.jpg" alt="">
+                    <ul class="swiper4-Text3">
+                        <div>
+                         
+                            <li class="swiper4-main">JBL 무선 이어폰 런칭</li>
+                        </div>
+                        <div class="swiper4-sideTop">
+                            <li class="swiper4-side">시그니처 사운드와 유니크한 디자인으로</li></br>
+                            <li class="swiper4-side">더욱 진화된 노이즈 캔슬링을 경험해보세요</li></br>
+                        </div>
+
+                        <a class="swiper4-btn" href="">구매 혜택 보기</a>
+                        
+
+                    
+                    </ul>
+                </div> 
+                <div class="swiper-slide">
+                    <img src="https://images.samsung.com/kdp/cms_contents/124315/d4190873-f2ae-4f4a-aa24-2b270836b6bd.jpg" alt="">
+                        <ul>
+                            <div>
+                                <li>Galaxy Studio</li></br>
+                               
+                            </div>
+                            <div>
+                                <li>갤럭시 S22의 놀랍고 새로운 기능을 마음껏 경험하세요</li></br>
+                          
+                            </div>
+                            <a class="" href="">더 알아보기</a>
+                        </ul>
+                </div> 
+                <div class="swiper-slide">
+                    <img src="https://images.samsung.com/kdp/cms_contents/124315/28a74e4d-d42c-4e20-bfee-c774667d8a96.jpg" alt="">
+                        <ul>
+                            <div>
+                                <li>갤럭시 콘텐츠 페스타</li></br>
+                            </div>
+                            <div>
+                                <li>갤럭시 S22로 담은 소중한 순간들을 확인해 보세요</li></br>
+                            
+                            </div>
+                            <a class="" href="">더 알아보기</a>
+                        </ul>
+                </div> 
+
+        
+        </div>
+        </div>      
+
+        <div>
+            <ul class="Page">
+                <li class="Page-name1">WHAT'S HAPPENING @ SAMSUNG.COM</li></br>
+                <li class="Page-name2">트렌트</li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="left">
+                <a href="">
+
+                    <img src="//images.samsung.com/kdp/display_banner/10651/fc238fa2-28f0-418f-af0c-8abf1435bd51.png?$ORIGIN_JPG$" alt=""></br>
+                </a>
+                <div class="left1">EVENT</div>
+                <div class="left2">갤럭시 콘텐츠 페스타</div>
+                <div class="left3">갤럭시 S22로 담은 소중한 순간들을 확인해 보세요</div>
+                <a href="">
+
+                    <img src="//images.samsung.com/kdp/display_banner/11234/1e7c8d80-d0aa-4b49-b1a0-887d85bab88a.jpg?$ORIGIN_JPG$" alt="">
+                </a>
+        
+                <div class="left1">EXPERIENCE</div>
+                <div class="left2">갤럭시 배워보기</div>
+                <div class="left3">Galaxy S22의 다양하고 놀라운 기능을</br>영상으로 쉽고 재미있게 하나씩 배워보세요</div>
+
+            </div>
+            <div class="center">
+                <a href="">
+                    <img src="//images.samsung.com/kdp/display_banner/9748/889b28dd-9043-47a9-a989-f362fad0805b.jpg?$ORIGIN_JPG$" alt=""></br>
+
+                </a>
+                <div class="left1">EXPERIENCE</div>
+                <div class="left2">BESPOKE 홈 메타<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                    <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                  </svg></div>
+                <div class="left3">전문가가 추천하는 BESPOKE 가전 제품과 컬러 조합을 체험해 보세요</br>
+                제품과 컬러를 직접 꾸미고, 이미지를 저장하여 매장에 보여주시면 상담을</br>
+            도와드립니다.</div>
+            <a href="">
+                <img src="//images.samsung.com/kdp/display_banner/11421/9ff8a8bc-ac59-4339-a106-7543d68aa96f.jpg?$ORIGIN_JPG$" alt="">
+
+            </a>
+                <div class="left1">EXPERIENCE</div>
+                <div class="left2">디지털프라자 VR스토어<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                    <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                  </svg></div>
+                <div class="left3">언제 어디서나 3D VR 스토어에서 제품 정보부터 상담까지 편하게</br>체험해보세요</div>
+            </div>
+            <div class="right">
+                <a href="">
+                    <img src="//images.samsung.com/kdp/display_banner/11930/e29a48f7-ea88-4786-8068-a37530882617.png?$ORIGIN_JPG$" alt="">
+                </a>
+                <div class="left1">EVENT</div>
+                <div class="left2">비스포크 팬파티</div>
+                <div class="left3">6월 18일 비스포크와 에버랜드에서 즐기는 특별한 썸머바캉스!</br>
+                    에버랜드 이용권 받고 에픽하이, 카더가든의 무대도 즐겨보세요</div>
+                
+                <a href="">
+
+                    <img src="//images.samsung.com/kdp/display_banner/7341/a00f1c28-3051-4496-a818-0f0a67f7a17d.jpg?$ORIGIN_JPG$" alt="">
+                </a>
+                <div class="left1">SUPPORT</div>
+                <div class="left2">매장 상담 예약</div>
+                <div class="left3">맞춤 상담을 예약하고 삼성전자가 제안하는 라이프스타일을 직접</br>체험해보세요</div>
+            </div>
+          
+        </div>
+<!-- =============================================================================== -->
+
+        <div class="topcon">
+            <div class="container1">
+                <ul class="con1" id="con1">
+                    <div class="con1Name">제품</div>
+                    <div>갤럭시</div>
+                    <div>스마트폰</div>
+                    <div>태블릿</div>
+                    <div>워치</div>
+                    <div>버즈</div>
+                    <div>갤럭시북</div>
+                    <div>프린터</div>
+                    <div>TV</div>
+                    <div>Lifestyle</div>
+                    <div>BESPOKE</div>
+                  
+                </ul>
+                <ul class="con2">
+                    <div>냉장고</div>
+                    <div>김치냉장고</div>
+                    <div>식기세척기</div>
+                    <div>전기레인지</div>
+                    <div>세탁기</div>
+                    <div>건조기</div>
+                    <div>에어드레서</div>
+                    <div>에어컨</div>
+                    <div>공기청정기</div>
+                    <div>청소기</div>
+
+                </ul>
+            </div>
+            <div class="container2">
+                <ul class="con1">
+                    <div class="con1Name">고객서비스</div>
+                    <div>삼성닷컴 FAQ</div>
+                    <div>이메일상담</div>
+                    <div>매장찾기</div>
+                    <div>서비스센터 찾기</div>
+                    <div>디지털프라자</div>
+                    <div>MD 비즈니스 협력제안<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>비즈니스 협력제안<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>삼성멤버스 커뮤니티<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>E-카탈로그<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>고객의 소리<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                  
+                </ul>
+               
+            </div>
+            <div class="container3">
+                <ul class="con1">
+                    <div class="con1Name">지속가능경영</div>
+                    <div>개요</div>
+                    <div>환경</div>
+                    <div>사회공헌</div>
+                    <div>디지털 책임</div>
+                    <div>노동과 인권</div>
+                    <div>다양성과 포용</div>
+                    <div>지속가능한 공급망</div>
+                    <div>제품 접근성</div>
+                  
+                  
+                </ul>
+               
+            </div>
+            <div class="container4">
+                <ul class="con1">
+                    <div class="con1Name">회사소개</div>
+                    <div>기업정보</div>
+                    <div>사업정보</div>
+                    <div>브랜드 아이덴티티</div>
+                    <div>채용</div>
+                    <div>투자자 정보<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>뉴스룸<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>윤리</div>
+                    <div>디자인 삼성<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>배당조회<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>공지사항</div>
+                  
+                  
+                </ul>
+               
+            </div>
+            <div class="container5">
+                <ul class="con1">
+                    <div class="con1Name">윤리&준법경영</div>
+                    <div>경영원칙<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>부정제보<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>법위반제보<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div class="con2Name">부가정보</div>
+                    <div>데이코<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 10">
+                        <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                      </svg></div>
+                    <div>협력회사 사이버 신문고</div>
+                    <div>페카트리지 회수신청</div>
+               
+                  
+                  
+                </ul>
+               
+            </div>
+        </div></br>
+        <div>
+
+        </div>
+        <div class="last-text">
+     
+
+                
+                삼성전자 주식회사 대표이사 : 한종희&nbsp; |&nbsp; 사업자등록번호 : 124-81-00998 &nbsp;<a href="//www.ftc.go.kr/www/bizCommView.do?key=232&apv_perm_no=2000374001130200515&pageUnit=10&searchCnd=wrkr_no&searchKrwd=1248100998&pageIndex=1">사업자 정보확인</a>&nbsp; |&nbsp; 통신판매업 신고 : 2000-경기수원-0515 </br></br>
+                사업장주소 : 경기도 수원시 영통구 삼성로 129(매탄동) &nbsp; |  &nbsp;호스팅서비스사업자 : 한국아이비엠(주)&nbsp; | &nbsp;대표번호 : 02-2255-0114&nbsp; |&nbsp; 제품/서비스/멤버십: 1588-3366(통화요금 : 발신자부담)&nbsp; |&nbsp; 구매문의 : 1588-6084 &nbsp;|&nbsp; 큐커 식품관 문의 : 1811-9228</br></br>
+                본 사이트에서 판매되는 상품 중에는 등록된 개별 판매자가 판매하는 상품이 포함되어 있습니다.</br></br>
+                개별 판매자 판매 상품의 경우 삼성전자(주)는 통신판매중개업자로서 통신판매의 당사자가 아니므로, 개별 판매자가 등록한 상품, 거래정보 및 거래 등에 대해 책임을 지지 않습니다.</br></br>
+                본 사이트의 컨텐츠는 저작권법의 보호를 받는 바 무단 전재, 복사, 배포 등을 금합니다.</br></br>
+
+            
+        <div class="last-text2">Copyright © 1995-2022 Samsung. All Rights Reserved.</div>
+    </div>
+    
+    <div class="banner"><a href="#" class="btn-floating" onclick="floating_open();"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+      </svg></span></a></div>
+      
+      <!-- .bottom-nav ul{
+        margin : 0;
+        padding :0;
+        background-color: rgba(44, 42, 39, 0.983);
+        list-style-type: none;
+      }
+      .bottom-nav ul li {
+        display: inline-block;
+        margin-left: 200;
+      }
+      .bottom-drop{
+        position: relative;
+      }
+      .bottom-menu{
+        color: white; padding: 16px; font-size: 16px; cursor: wait;
+      }
+      .bottom-content{
+        display: none; position: absolute;background-color: #f9f9f9; min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      }
+      .bottom-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .bottom-drop:hover .bottom-content{
+        display: block;
+      }
+      .bottom-content a:hover{
+        background-color: #f1f1f1
+      } -->
+      <nav class="bottom-nav">
+        <ul>
+            <li class="bnav-1">한국/한국어</li><li>|</li>
+            <li> 이메일 무단 수집거부</li><li>|</li>
+            <li> 아이디어 정책</li><li>|</li>
+            <li class="site-map"> 사이트맵</li>
+            <li class="bottom-drop">
+                <div class="bottom-menu">이용약관 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 10">
+                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                </svg></div>
+                <div class="bottom-content">
+                    <a href="https://account.samsung.com/membership/etc/specialTC.do?fileName=samsungkorea.html">
+                        삼성전자 대표사이트 이용약관</a>
+                    <a href="https://www.samsung.com/sec/membership/terms/">
+                        삼성전자멤버십 이용약관
+                    </a>
+                    <a href="https://account.samsung.com/membership/policy/terms">
+                        Samsung 서비스 이용약관</a>
+                    </div>
+                    <li class="bottom-drop">
+                        <div class="bottom-menu">개인정보처리방침<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 10">
+                            <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                          </svg></div>
+                        <div class="bottom-content">
+                            <a href="https://account.samsung.com/membership/etc/specialTC.do?fileName=samsungkorea.html">
+                                삼성전자 대표사이트 이용약관</a>
+                            <a href="https://www.samsung.com/sec/membership/terms/">
+                                삼성전자멤버십 이용약관
+                            </a>
+                            <a href="https://account.samsung.com/membership/policy/terms">
+                                Samsung 서비스 이용약관</a>
+                        </div>
+                    </li>
+                    <li class="bottom-img">
+                        <img src="/sdkd.JPG" alt="">
+                    </li>
+            </li>
+        </ul>
+      
+      </nav>
+    
+    <div class="side-icon"><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+      </svg></a></div>
+      
+
+   
+</body>
+
+
+</html>
+        <script>
+            var bullet = ['공동구매', 'Galaxy Tab Series', '블랙야크 콜라보','TV+OTT', '무풍에어컨','BESPOKE 큐커'
+        ,'중고가전 추가보상','삼성케어플러스','Galaxy Buds2'];
+            var swiper = new Swiper(".mySwiper", {
+              spaceBetween: 30,
+              centeredSlides: true,
+              autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+              },
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                return '<div class="' + className + '"><span>' + (bullet[index]) + '</span></div>';
+                }
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+            });
+
+            // var bullet = ['1번', '2번', '3번'];
+            // var swiper = new Swiper('.swiper-container', {
+            // pagination: {
+            //     el: '.swiper-pagination',
+            //     clickable: true,
+            //     renderBullet: function (index, className) {
+            //     return '<div class="' + className + '"><span>' + (bullet[index]) + '</span></div>';
+            //     }
+            // },
+            // navigation: {
+            //     nextEl: '.swiper-button-next',
+            //     prevEl: '.swiper-button-prev',
+            // },
+            // });
+
+          
+            var swiper2 = new Swiper(".mySwiper2", {
+              slidesPerView: 5,
+            grid: {
+            rows: 2,
+            },
+            spaceBetween: 30,
+            
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            },
+            
+            });
+
+            var bullet =["Galaxy S22 Series","Galaxy Book2 Series","갤럭시 캠퍼스 스토어",
+            "갤럭시 스튜디오","갤럭시 콘텐츠 페스타"]
+            var swiper3 = new Swiper(".mySwiper3", {
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (bullet[index]) + "</span>";
+                        // return '<div class="' + className + '"><span>' + (bullet[index]) + '</span></div>';
+                    },
+                    },
+                });
+           
+            var bullet =["The Freestyle","Neo QLED","JBL무선 이어폰",
+            "MICRO LED","스마트 모니터"]
+            var swiper4 = new Swiper(".mySwiper4", {
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (bullet[index]) + "</span>";
+                        // return '<div class="' + className + '"><span>' + (bullet[index]) + '</span></div>';
+                    },
+                    },
+                });
+    
+                // let isVisible = false;
+ 
+                // window.addEventListener('scroll', function() {
+                //     if ( checkVisible($('.swiper3-main1')) && !isVisible) {
+                //         alert("엘리먼트 보임 !!");
+                //         isVisible=true;
+                //     }
+                // });
+                
+                // function checkVisible( elm, eval ) {
+                //     eval = eval || "object visible";
+                //     var viewportHeight = $(window).height(), // Viewport Height
+                //         scrolltop = $(window).scrollTop(), // Scroll Top
+                //         y = $(elm).offset().top,
+                //         elementHeight = $(elm).height();   
+                    
+                //     if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+                //     if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+                // }
+                
+                  
+                    let slider3 = "swiper3-pagination"
+                slider3.ondragenter = function(){
+                    console.log('드래그가 해당요소에 들어감');
+                };
+
+
+                    // el.addEventListene('scroll');{
+                        // let sideIcon(.side-icon);
+
+                    // }
+                document.querySelectorAll('.dropdown-menu').forEach(e=>{
+                    // console.log(e.getBoundingClientRect().left);
+                    // left 변수에 브라우저 화면상의 dropdown-menu(현재 반복문의 태그)의 left값을 담고
+                    let left = e.getBoundingClientRect().left;
+                    // 현재 dropdown-menu의 부모에서 querySelector로 dropdown-content이 태그를 선택하고
+                    // 스타일을 주는데 위에서 left 변수에 담은 값을 빼서 화면의 왼쪽에 맞게 정렬
+                    e.parentElement.querySelector('.dropdown-content').style.left = -left + "px";
+                })
+                document.querySelectorAll('.dropdown').forEach((e,index)=>{
+                    if(index == 2 || index == 4 || index == 9 || index ==10)
+                    {
+                        
+                    }
+                 
+                    else{
+                        let left = e.querySelector('.dropdown-menu').getBoundingClientRect().left;
+                        let el = document.createElement('div');
+                        el.classList.add('dim');
+                        el.style.left = -left + "px";
+                        e.appendChild(el);
+                    }
+                })
+          </script>
